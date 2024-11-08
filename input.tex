@@ -8,15 +8,13 @@
 
 \title{Título do documento}
 \author{Bruno}
-\address{Minha Rua, n.ºXY \\ 12345-67, São José dos Campos - SP}
-\keywords{}
 
 \workcourse{Engenharia de Infraestrutura Aeronáutica}
 \workarea{Infraestrutura Aeroportuária}
 
 \advisor{female}{prof}{dr}{Minha Orientadora}{ITA}
-\member{male}{prof}{dr}{Membro Interno}{memi}{ITA}
-\member{female}{prof}{dr}{Membro Externo}{meme}{UFES}
+\coadvisor{male}{prof}{dr}{Meu Coorientador}{ITA}
+\subscriber{male}{prof}{dr}{Nome do Pró-Reitor}{rec}
 
 \date{2024-08-31}
 
@@ -24,6 +22,10 @@
 
 \frontmatter
 \maketitle
+
+% after
+\listoffigures
+\listoftables
 
 \tableofcontents
 
@@ -39,11 +41,23 @@ Um flutuante para ``figura'' a seguir.\par
 \end{figure}\par
 \lipsum[6-7]
 
-Usando uma imagem salva
+Usando uma imagem salva a seguir.\par
 \begin{figure}[tbp]
 	\centering
 	\includegraphics[width=\textwidth]{./imagem.png}
-	\caption{Aqui é a legenda da imagem salva}
+	\caption{Aqui é a legenda da imagem salva}\par
 \end{figure}
+
+E tabelas também podem ser flutuantes
+\begin{table}
+	\centering
+	\begin{tabular}{|l|c|r|}
+		\hline
+		foo   & bar    & fubar \\
+		fubar & toobar & foo   \\
+		\hline
+	\end{tabular}
+	\caption{Legenda da tabela}
+\end{table}
 
 \end{document}
