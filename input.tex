@@ -3,11 +3,7 @@
 \usepackage[brazil]{babel}
 \usepackage{csquotes}
 \usepackage{lipsum}
-
-\usepackage{tabulary}
-\usepackage{tabularx}
-
-\usepackage{graphicx}
+\usepackage{amsmath}
 
 \title{Título do documento}
 \author{Bruno}
@@ -33,44 +29,39 @@
 \tableofcontents
 
 \mainmatter
-\chapter{Tabular}
+\chapter{Math}
 
-%Tabular
-\centering
-\begin{tabular}{|l|c|r|}
-	\hline
-	foo                                                                                                   &
-	texto longo longo longo longo longo longo longo longo longo longo longo longo longo longo longo longo &
-	fubar                                                                                                   \\ fubar                                                                                                 &
-	toobar                                                                                                &
-	foo                                                                                                     \\
-	\hline
-\end{tabular}
+Essa é uma equação no meio do texto $x = a + b$. Apesar de \$ funcionar, \textbackslash( é preferível, como em \(a = x - b\).
 
-%Tabulary
-\centering
-\begin{tabularx}{\textwidth}{|l|X|X|}
-	\hline
-	foo                                                                                                   &
-	texto longo longo longo longo longo longo longo longo longo longo longo longo longo longo longo longo &
-	foo                                                                                                     \\
-	fubar                                                                                                 &
-	toobar                                                                                                &
-	texto não tão longo longo longo longo                                                                   \\
-	\hline
-\end{tabularx}
 
-%Tabularx
-\centering
-\begin{tabulary}{\textwidth}{|l|C|R|}
-	\hline
-	foo                                                                                                   &
-	texto longo longo longo longo longo longo longo longo longo longo longo longo longo longo longo longo &
-	foo                                                                                                     \\
-	fubar                                                                                                 &
-	toobar                                                                                                &
-	texto não tão longo longo longo longo                                                                   \\
-	\hline
-\end{tabulary}
+Podemos usar math env para fórmulas mais longas\par
+\begin{math}
+	F = m \times a
+\end{math}
+
+Ou, para equações numeradas:\par
+
+\begin{equation}
+	E = m \times c^2
+\end{equation}
+
+
+Para alinhar também podemos %\usepackage{amsmath}
+% https://tex.stackexchange.com/questions/105635/align-multiline-equation-with-expression-after-equal-sign
+\begin{align}
+	\mathcal{L}^{-1}\left\{f(d)\right\} & = \mathcal{L}^{-1}\left\{f_1(\delta).f_2(\delta)\right\}                  \\
+	                                    & = \exp(mt) \star \left\{\frac{l}{2\sqrt{\pi t^3}} \exp(-l^2/{4t})\right\} \\
+	                                    & = F_1 * F_2
+\end{align}
+
+ou
+
+\begin{equation}
+	\begin{aligned}
+		\mathcal{L}^{-1}\left\{f(d)\right\} & = \mathcal{L}^{-1}\left\{f_1(\delta).f_2(\delta)\right\}                 \\
+		                                    & = \exp(mt) \star \left\{\frac{l}{2\sqrt{\pi t^3}} exp(-l^2/{4t})\right\} \\
+		                                    & = F_1 * F_2
+	\end{aligned}
+\end{equation}
 
 \end{document}
