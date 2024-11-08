@@ -1,11 +1,6 @@
 \documentclass[dsc,male,12pt,a4paper,oneside]{ita}
 
-\usepackage[brazil]{babel}
-\usepackage{csquotes}
-\usepackage{lipsum}
-
-\usepackage[acronym]{glossaries}
-\usepackage{glossaries-prefix}
+\input{packages}
 
 \title{Título do documento}
 \author{Bruno}
@@ -19,38 +14,11 @@
 
 \date{2024-08-31}
 
-\newacronym{EIA}{EIA}{Engenharia de Infraestrutura Aeronáutica}
+\loadglsentries{./glossary.tex}
+\addbibresource{./references.bib}
 
-% prefixo
-\newacronym[prefix=an\space,prefixfirst=a\space]{RDF}{RDF}{Resource Description Framework}
-
-\makeglossary
+\makeglossaries
 
 \begin{document}
-
-\frontmatter
-\maketitle
-
-% after
-\listoffigures
-\listoftables
-
-%print
-\printglossary[type=\acronymtype, title={Abreviações}, nonumberlist]
-\tableofcontents
-
-\mainmatter
-\chapter{Abreviações}
-
-A primeira utilização possui o formato \gls{EIA}.
-
-
-Utilizações seguintes são apresentadas como \gls{EIA}.
-
-
-Mas eu posso pedir o completo usando \glsentrylong{EIA}.
-
-Em inglês, podemos ter o problema de uma abreviação ter o prefixo ``a'' ou ``an''. Nesse caso, podemos estabelecer como queremos e usar \pgls{RDF} no primeiro uso ou \pgls{RDF} nos próximos.
-
-
+\input{structure.tex}
 \end{document}
