@@ -1,0 +1,6 @@
+[submodule "texmf/tex/latex/itatex"]
+	path = texmf/tex/latex/itatex
+	url = git@github.com:brunotvs/itatex.git
+[submodule "texmf/tex/latex/biblatex-contrib/biblatex-abnt"]
+	path = texmf/tex/latex/biblatex-contrib/biblatex-abnt
+	url = git@github.com:abntex/biblatex-abnt.git

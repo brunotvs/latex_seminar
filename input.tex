@@ -1,25 +1,37 @@
-\documentclass{article}
+\documentclass[doc,male,12pt,a4paper]{ita}
 
 \usepackage[brazil]{babel}
+\usepackage{csquotes}
 \usepackage{lipsum}
 
-\usepackage{biblatex}
+\usepackage[style=abnt,url=false,doi=false,isbn=false,maxbibnames=3,maxcitenames=3,natbib=true]{biblatex}
 
 \addbibresource{./references.bib}
 
-\author{Bruno Thiago}
+\title{Título do documento}
+\author{Bruno}
+\address{Minha Rua, n.ºXY \\ 12345-67, São José dos Campos - SP}
+\keywords{}
 
-\title{Seminário de tese}
+\workcourse{Engenharia de Infraestrutura Aeronáutica}
+\workarea{Infraestrutura Aeroportuária}
+
+\advisor{female}{prof}{dr}{Minha Orientadora}{ITA}
+\member{male}{prof}{dr}{Membro Interno}{memi}{ITA}
+\member{female}{prof}{dr}{Membro Externo}{meme}{UFES}
+
+\date{2024-08-31}
 
 \begin{document}
 
+\frontmatter
 \maketitle
+\makecip
 
-\begin{abstract}
-	\lipsum[1]
-\end{abstract}
+\tableofcontents
 
-\section{Introdução}
+\mainmatter
+\chapter{Introdução}
 Uma citação ``normal'' \cite{silvaBIM4DNo2019}.
 
 Segundo \textcite{dynamoDynamoBIM} é assim que cita no texto.
