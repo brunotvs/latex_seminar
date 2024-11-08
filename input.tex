@@ -3,6 +3,10 @@
 \usepackage[brazil]{babel}
 \usepackage{lipsum}
 
+\usepackage{biblatex}
+
+\addbibresource{./references.bib}
+
 \author{Bruno Thiago}
 
 \title{Seminário de tese}
@@ -16,9 +20,15 @@
 \end{abstract}
 
 \section{Introdução}
-\lipsum[1-2]
+Uma citação ``normal'' \cite{silvaBIM4DNo2019}.
 
-\section{Revisão}
-\lipsum[3-4]
+Segundo \textcite{dynamoDynamoBIM} é assim que cita no texto.
 
+Posso citar várias fontes \cites{nrelEnergyPlus2024,ronzaniEstudoITAPara2020}.
+
+\textcites{wenProgressTrendBIM2021,autodeskNavisworks3DModel2024} citam várias fontes também.
+
+Assim como colocar informação adicional \cite[pre][post]{pauwelsIFCtoRDF2024}.
+
+\printbibliography
 \end{document}
