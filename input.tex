@@ -4,6 +4,9 @@
 \usepackage{csquotes}
 \usepackage{lipsum}
 
+\usepackage[acronym]{glossaries}
+\usepackage{glossaries-prefix}
+
 \title{Título do documento}
 \author{Bruno}
 
@@ -16,6 +19,13 @@
 
 \date{2024-08-31}
 
+\newacronym{EIA}{EIA}{Engenharia de Infraestrutura Aeronáutica}
+
+% prefixo
+\newacronym[prefix=an\space,prefixfirst=a\space]{RDF}{RDF}{Resource Description Framework}
+
+\makeglossary
+
 \begin{document}
 
 \frontmatter
@@ -25,28 +35,22 @@
 \listoffigures
 \listoftables
 
+%print
+\printglossary[type=\acronymtype, title={Abreviações}, nonumberlist]
 \tableofcontents
 
 \mainmatter
-\chapter{Label}\label{ch: Chapter label}
+\chapter{Abreviações}
 
-Eu posso referenciar um capítulo. Estou no Capítulo~\ref{ch: Chapter label}. Ou outro capítulo qualquer (ver Capítulo~\ref{ch: Chapter other}).
-E também a Seção~\ref{sec: section}
+A primeira utilização possui o formato \gls{EIA}.
 
-Também consigo referenciar floats. Qualquer float pode ser referenciado, desde que tenha uma label na sua caption, como a Figura~\ref{fig: Float}.\par
-\begin{figure}[htbp]
-	\centering
-	Posso ser referenciado.
-	\caption{Float referenciável}\label{fig: Float}
-\end{figure}
 
-Equações numeradas também, como a Equação~\ref{eq: equation}.\par
-\begin{equation}
-	F = m \times a
-	\label{eq: equation}
-\end{equation}
+Utilizações seguintes são apresentadas como \gls{EIA}.
 
-\chapter{Outro Capítulo}\label{ch: Chapter other}
-\section{Seção}\label{sec: section}
+
+Mas eu posso pedir o completo usando \glsentrylong{EIA}.
+
+Em inglês, podemos ter o problema de uma abreviação ter o prefixo ``a'' ou ``an''. Nesse caso, podemos estabelecer como queremos e usar \pgls{RDF} no primeiro uso ou \pgls{RDF} nos próximos.
+
 
 \end{document}
